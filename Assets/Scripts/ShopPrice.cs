@@ -28,4 +28,6 @@ public class ShopPrice : MonoBehaviour
     {
         return price;
     }
+
+
 }

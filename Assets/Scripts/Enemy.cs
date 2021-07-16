@@ -37,7 +37,13 @@ public class Enemy : MonoBehaviour
 
     private void OnDestroy()
     {
-        FindObjectOfType<GameSession>().SubEnemy();
+        GameSession gameSession = FindObjectOfType<GameSession>();
+        if (gameSession != null)
+        {
+            FindObjectOfType<GameSession>().SubEnemy();
+            FindObjectOfType<GameSession>().AddScore(scoreValue);
+            
+        }
     }
 
     private void Start()
@@ -62,7 +68,9 @@ public class Enemy : MonoBehaviour
     private void Fire()
     {
         GameObject projectile = Instantiate(projectilePrefab, new Vector2(transform.position.x, transform.position.y - 0.5f), Quaternion.identity) as GameObject;
+        //projectile.transform.parent = transform;
         projectile.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -projectileSpeed);
+     
         AudioSource.PlayClipAtPoint(shotSound, Camera.main.transform.position, shotSoundVolume);
         shotCounter = Random.Range(minTimeBetweenShot, maxTimeBetweenShot);
     }
@@ -70,7 +78,7 @@ public class Enemy : MonoBehaviour
     public void OnTriggerEnter2D(Collider2D collision)
     {
         DamageDealer damageDealer = collision.gameObject.GetComponent<DamageDealer>();
-        if (collision.tag== "PlayerProjectile")
+        if (collision.tag== "PlayerProjectile" )
         {
             ProcessHit(damageDealer);
             Destroy(collision.gameObject);
@@ -83,12 +91,13 @@ public class Enemy : MonoBehaviour
 
         if (health <= 0)
         {
-            FindObjectOfType<GameSession>().AddScore(scoreValue);
+            
             Destroy(gameObject);
+            EnemyDrop();
             GameObject explosion = Instantiate(deathVFX, transform.position, transform.rotation);
             Destroy(explosion, durationOfExplosion);
             AudioSource.PlayClipAtPoint(explosionSound, Camera.main.transform.position, explosionSoundVolume);
-            EnemyDrop();
+            
 
 
 

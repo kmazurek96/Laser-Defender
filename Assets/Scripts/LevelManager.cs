@@ -9,16 +9,23 @@ public class LevelManager : MonoBehaviour
     int currentBuildIndex;
 
 
-
+    public int ReturnIndex()
+    {
+        currentBuildIndex = SceneManager.GetActiveScene().buildIndex;
+        return currentBuildIndex;
+    }
 
     public void LoadStartMenu()
     {
         SceneManager.LoadScene(0);
+        FindObjectOfType<GameSession>().GetComponent<PauseDisplay>().ResumeGame();
+        FindObjectOfType<GameSession>().DestroySelf();
     }
     public void LoadStartLevel()
     {
         SceneManager.LoadScene(1);
-        FindObjectOfType<GameSession>().ResetGame();
+        //FindObjectOfType<GameSession>().ResetGame();
+        FindObjectOfType<GameSession>().DestroySelf();
     }
 
     public void LoadNextLevel()
@@ -30,6 +37,8 @@ public class LevelManager : MonoBehaviour
     {
         currentBuildIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentBuildIndex + 1);
+        FindObjectOfType<HealthDisplay>().HealthDisplayToString();
+
     }
 
     IEnumerator WaitAndLoadNextLevel()
@@ -50,6 +59,12 @@ public class LevelManager : MonoBehaviour
         yield return new WaitForSeconds(delayInSeconds);
         SceneManager.LoadScene("Game Over");
     }
+
+    public void ResumeGame()
+    {
+        FindObjectOfType<GameSession>().GetComponent<PauseDisplay>().ResumeGame();
+    }
+
     public void QuitGame()
     {
         Application.Quit();

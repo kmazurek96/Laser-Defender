@@ -6,6 +6,11 @@ TagManager:
   tags:
   - EnemyProjectile
   - PlayerProjectile
+  - Meteor
+  - Enemy
+  - EmptyGameObject
+  - Boss
+  - Boss Laser
   layers:
   - Default
   - TransparentFX
@@ -13,7 +18,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Enemy
   - 
   - 
   - 
@@ -42,4 +47,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Enemy
+    uniqueID: 281559527
     locked: 0

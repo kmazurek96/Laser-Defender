@@ -9,6 +9,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] bool looping = false;
     IEnumerator Start()
     {
+       yield return new WaitForSeconds(5);
         do
         {
             yield return StartCoroutine(SpawnAllWaves());
@@ -31,6 +32,7 @@ public class EnemySpawner : MonoBehaviour
         {
             var newEnemy =Instantiate(WaveConfig.GetenemyPrefab(), WaveConfig.GetWavepoints()[0].transform.position, Quaternion.identity);
             newEnemy.GetComponent<EnemyPathing>().SetWaveConfig(WaveConfig);
+            newEnemy.transform.parent = transform;
             yield return new WaitForSeconds(WaveConfig.GettimeBetweenSpawns());
             
             

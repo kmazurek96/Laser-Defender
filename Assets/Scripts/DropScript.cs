@@ -13,7 +13,11 @@ public class DropScript : MonoBehaviour
 
     private void OnDestroy()
     {
-        FindObjectOfType<GameSession>().SubDrop();
+        GameSession gameSession = FindObjectOfType<GameSession>();
+        if (gameSession != null)
+        {
+            FindObjectOfType<GameSession>().SubDrop();
+        }
     }
 
     void Start ()
