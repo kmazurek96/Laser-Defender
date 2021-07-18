@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class PauseDisplay : MonoBehaviour
 {
     [SerializeField] GameObject pauseCanvas;
+    [SerializeField] GameObject pauseCanvasButton;
     public static bool escapeClicked = false;
     public static bool isNotPaused = true;
     private bool isSceneWhereCantPause = false;
@@ -57,6 +58,10 @@ public class PauseDisplay : MonoBehaviour
         Time.timeScale = 1;
     }
 
+    public void PauseOnMobile()
+    {
+        PauseGame();
+    }
 
 
     private void CheckingScene()
@@ -73,6 +78,17 @@ public class PauseDisplay : MonoBehaviour
         {
             isSceneWhereCantPause = false;
         }
+
+        if (sceneName1 == sceneName || sceneName1 == sceneName2)
+        {
+            pauseCanvasButton.SetActive(false);
+        }
+        else
+        {
+            pauseCanvasButton.SetActive(true);
+        }
+    }
+        
     }
 
-}
+

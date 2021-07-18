@@ -10,10 +10,10 @@ EditorBuildSettings:
     guid: 45ff1e73604007445ac9452164f95e3c
   - enabled: 1
     path: Assets/Scenes/Level1.unity
-    guid: 36ca84395e28b794c96bfda20190ca43
+    guid: 525c02c64df2e314d8e45058144e304a
   - enabled: 1
     path: Assets/Scenes/Level2.unity
-    guid: 525c02c64df2e314d8e45058144e304a
+    guid: 36ca84395e28b794c96bfda20190ca43
   - enabled: 1
     path: Assets/Scenes/Level3.unity
     guid: 8ff237e3fb329b2439457ce2daac1e12
@@ -34,21 +34,21 @@ EditorBuildSettings:
     guid: 2554ebb8058e3e1428d9774e078f68a2
   - enabled: 1
     path: Assets/Scenes/Level8.unity
-    guid: d1d5f48ddfff5ef4190524a97b833876
+    guid: 09382c51ffdf5af43a589bcb035155ed
   - enabled: 1
     path: Assets/Scenes/Shop Level 1.unity
     guid: b02f8ce291a30fc4094934243e4e5432
   - enabled: 1
     path: Assets/Scenes/Level9.unity
-    guid: de622c71f2078bc4c8930b3af2f0e575
+    guid: d1d5f48ddfff5ef4190524a97b833876
   - enabled: 1
     path: Assets/Scenes/Level10.unity
-    guid: 09382c51ffdf5af43a589bcb035155ed
+    guid: de622c71f2078bc4c8930b3af2f0e575
   - enabled: 1
     path: Assets/Scenes/Shop Level 2.unity
     guid: 6227c65b19b6fb040a0fddd3bacbc61f
   - enabled: 1
-    path: Assets/Scenes/Level12.unity
+    path: Assets/Scenes/Level11.unity
     guid: 649ca79b93c94de458602048fc6e22b8
   - enabled: 1
     path: Assets/Scenes/End Game -Delete.unity

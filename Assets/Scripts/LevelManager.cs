@@ -9,6 +9,32 @@ public class LevelManager : MonoBehaviour
     int currentBuildIndex;
 
 
+    private void Awake()
+    {
+
+        SetUpSingleton();
+    }
+
+
+    private void SetUpSingleton()
+    {
+
+        int numberLevelManagers = FindObjectsOfType<Player>().Length;
+        if (numberLevelManagers > 1)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            DontDestroyOnLoad(gameObject);
+        }
+
+
+
+    }
+
+
+
     public int ReturnIndex()
     {
         currentBuildIndex = SceneManager.GetActiveScene().buildIndex;
@@ -17,9 +43,12 @@ public class LevelManager : MonoBehaviour
 
     public void LoadStartMenu()
     {
+        GameObject player = FindObjectOfType<Player>().gameObject;
+        Destroy(player);
         SceneManager.LoadScene(0);
         FindObjectOfType<GameSession>().GetComponent<PauseDisplay>().ResumeGame();
         FindObjectOfType<GameSession>().DestroySelf();
+  
     }
     public void LoadStartLevel()
     {

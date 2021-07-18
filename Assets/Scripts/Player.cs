@@ -50,8 +50,9 @@ public class Player : MonoBehaviour
 
     private void SetUpSingleton()
     {
-        int numberGameSessions = FindObjectsOfType<Player>().Length;
-        if (numberGameSessions > 1)
+
+        int numberPlayers = FindObjectsOfType<Player>().Length;
+        if (numberPlayers> 1)
         {
             Destroy(gameObject);
         }
@@ -59,6 +60,9 @@ public class Player : MonoBehaviour
         {
             DontDestroyOnLoad(gameObject);
         }
+
+
+
     }
 
 

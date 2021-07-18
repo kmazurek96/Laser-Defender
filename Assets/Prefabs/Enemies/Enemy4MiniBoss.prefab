@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7948261020550387781}
   - component: {fileID: 8216318845828617036}
   - component: {fileID: 2878465617472903946}
+  - component: {fileID: -967002792117125780}
   m_Layer: 6
   m_Name: Enemy4MiniBoss
   m_TagString: Enemy
@@ -165,3 +166,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-967002792117125780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8508225953358835240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4048d4906c6df44479edfe53c05481d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dropList:
+  - {fileID: 5472344758621570688, guid: 45868ed202c95414faa2817bd139b79d, type: 3}
+  - {fileID: 5001105545150433351, guid: f7bea84262d2cbf4794764a5dab7bc0a, type: 3}
