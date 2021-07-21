@@ -59,7 +59,8 @@ public class GameSession : MonoBehaviour
         Scene sceneName = SceneManager.GetSceneByName("Game Over");
         Scene sceneName2 = SceneManager.GetSceneByName("Shop Level");
         Scene sceneName3 = SceneManager.GetSceneByName("Meteor Level");
-        if (sceneName != sceneName1 && sceneName1 != sceneName2 &&  sceneName1 != sceneName3)
+        Scene sceneName4 = SceneManager.GetSceneByName("End Game -Delete");
+        if (sceneName != sceneName1 && sceneName1 != sceneName2 &&  sceneName1 != sceneName3 && sceneName1 != sceneName4)
 
         {
 

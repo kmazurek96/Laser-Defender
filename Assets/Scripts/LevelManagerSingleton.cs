@@ -13,7 +13,7 @@ public class LevelManagerSingleton : MonoBehaviour
 
     private void SetUpSingleton()
     {
-        int numberLevelManager = FindObjectsOfType<LevelPauseManager>().Length;
+        int numberLevelManager = FindObjectsOfType<LevelManager>().Length;
         if (numberLevelManager > 1)
         {
             Destroy(gameObject);

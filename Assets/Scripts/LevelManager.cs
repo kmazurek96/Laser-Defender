@@ -43,11 +43,23 @@ public class LevelManager : MonoBehaviour
 
     public void LoadStartMenu()
     {
-        GameObject player = FindObjectOfType<Player>().gameObject;
-        Destroy(player);
-        SceneManager.LoadScene(0);
-        FindObjectOfType<GameSession>().GetComponent<PauseDisplay>().ResumeGame();
-        FindObjectOfType<GameSession>().DestroySelf();
+        
+        
+        if (FindObjectOfType<Player>())
+        {
+            GameObject player = FindObjectOfType<Player>().gameObject;
+            Destroy(player);
+            SceneManager.LoadScene(0);
+            FindObjectOfType<GameSession>().GetComponent<PauseDisplay>().ResumeGame();
+            FindObjectOfType<GameSession>().DestroySelf();
+        }
+        else
+        {
+            SceneManager.LoadScene(0);
+            FindObjectOfType<GameSession>().GetComponent<PauseDisplay>().ResumeGame();
+            FindObjectOfType<GameSession>().DestroySelf();
+        }
+
   
     }
     public void LoadStartLevel()
